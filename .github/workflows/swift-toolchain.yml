@@ -1279,7 +1279,7 @@ jobs:
 
       - name: Upload PDBs to Public Symbol Server
         uses: ./SourceCache/ci-build/.github/actions/publish-symbols-r2
-        if: ${{ inputs.debug_info && matrix.os == 'Windows' }}
+        if: ${{ inputs.debug_info && matrix.os == 'Windows' && inputs.release }}
         with:
           symbolsFolder: ${{ github.workspace }}/BinaryCache/1
           searchPattern: '*.pdb'
@@ -1965,7 +1965,7 @@ jobs:
 
       - name: Upload PDBs to Public Symbol Server
         uses: ./SourceCache/ci-build/.github/actions/publish-symbols-r2
-        if: ${{ inputs.debug_info && matrix.os == 'Windows' }}
+        if: ${{ inputs.debug_info && matrix.os == 'Windows' && inputs.release }}
         with:
           symbolsFolder: ${{ github.workspace }}/BinaryCache
           searchPattern: '*.pdb'
@@ -2131,7 +2131,7 @@ jobs:
 
       - name: Upload PDBs to Public Symbol Server
         uses: ./SourceCache/ci-build/.github/actions/publish-symbols-r2
-        if: ${{ inputs.debug_info }}
+        if: ${{ inputs.debug_info && inputs.release }}
         with:
           symbolsFolder: ${{ github.workspace }}/BinaryCache/swift-foundation-macros
           searchPattern: '*.pdb'
@@ -2835,7 +2835,7 @@ jobs:
 
       - name: Upload PDBs to Public Symbol Server
         uses: ./SourceCache/ci-build/.github/actions/publish-symbols-r2
-        if: ${{ inputs.debug_info && matrix.os == 'Windows' }}
+        if: ${{ inputs.debug_info && matrix.os == 'Windows' && inputs.release }}
         with:
           symbolsFolder: ${{ github.workspace }}/BinaryCache
           searchPattern: '*.pdb'
@@ -3261,7 +3261,7 @@ jobs:
 
       - name: Upload PDBs to Public Symbol Server
         uses: ./SourceCache/ci-build/.github/actions/publish-symbols-r2
-        if: ${{ inputs.debug_info && matrix.os == 'Windows' }}
+        if: ${{ inputs.debug_info && matrix.os == 'Windows' && inputs.release }}
         with:
           symbolsFolder: ${{ github.workspace }}/BinaryCache
           searchPattern: '*.pdb'
@@ -4126,7 +4126,7 @@ jobs:
 
       - name: Upload PDBs to Public Symbol Server
         uses: ./SourceCache/ci-build/.github/actions/publish-symbols-r2
-        if: ${{ inputs.debug_info }}
+        if: ${{ inputs.debug_info && inputs.release }}
         with:
           symbolsFolder: ${{ github.workspace }}/BinaryCache
           searchPattern: '*.pdb'
